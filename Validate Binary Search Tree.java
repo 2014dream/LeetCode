@@ -43,15 +43,7 @@ Given n = 3, your program should return all 5 unique BST's shown below.
    
 /* It is similar to the above solution, find out the left and right subtrees, then use recursive way to construct. */
 
-/**
- * Definition for binary tree
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; left = null; right = null; }
- * }
- */
+
 public class Solution {
     public ArrayList<TreeNode> generateTrees(int n) {
         return generateTrees(1,n);
