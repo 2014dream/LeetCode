@@ -42,9 +42,9 @@ public class Solution {
         if(s1.length()+s2.length()!=s3.length())
             return false;
         if(0==s1.length())
-            return s2.substring(0).equals(s3.substring(0));
+            return s2.equals(s3);
         if(0==s2.length())
-            return s1.substring(0).equals(s3.substring(0));
+            return s1.equals(s3);
         boolean[][] dp=new boolean[s1.length()+1][s2.length()+1];
         dp[0][0]=true;
         for(int i=1;i<=s1.length();++i){
