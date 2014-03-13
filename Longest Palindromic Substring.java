@@ -66,5 +66,5 @@ public class Solution {
     }
 }
 
-/* There is another solution with time complexity of O(n), refer below lind for details.
-http://leetcode.com/2011/11/longest-palindromic-substring-part-ii.html */
+/* There is another solution with time complexity of O(n), refer below lind for details.*/
+http://leetcode.com/2011/11/longest-palindromic-substring-part-ii.html 
