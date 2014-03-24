@@ -58,3 +58,22 @@ Return 1 since the palindrome partitioning ["aa","b"] could be produced using 1 
 /* For the minimum/maximum, shortest ... problems, you can think the DP solution. In this problem, D[i] is the minimum
 cut number from i to n, D[i]=min(D[j+1]+1) if subtring from i to j is palindrome.*/
 
+public class Solution {
+    public int minCut(String s) {
+        int len=s.length();
+        int[] D=new int[len+1];
+        boolean[][] DP=new boolean[len][len];
+        for(int i=0;i<=len;++i){
+            D[i]=len-i;
+        }
+        for(int i=len-1;i>=0;--i){
+            for(int j=i;j<len;++j){
+                if(s.charAt(i)==s.charAt(j) && (j-i<2 || DP[i+1][j-1])){
+                    DP[i][j]=true;
+                    D[i]=Math.min(D[i],D[j+1]+1);
+                }
+            }
+        }
+        return D[0]-1;
+    }
+}
