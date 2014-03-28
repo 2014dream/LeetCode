@@ -31,3 +31,23 @@ Given sorted array A = [1,1,1,2,2,3],
 
 Your function should return length = 5, and A is now [1,1,2,2,3].*/
 
+public class Solution {
+    public int removeDuplicates(int[] A) {
+        if(A.length<3)
+            return A.length;
+        int index=0,num=1;
+        for(int j=1;j<A.length;++j){
+            if(A[j]!=A[index]){
+                A[++index]=A[j];
+                num=1;
+            }
+            else{
+                if(1==num){
+                    A[++index]=A[j];
+                }
+                num++;
+            }
+        }
+        return index+1;
+    }
+}
