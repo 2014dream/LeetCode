@@ -64,3 +64,31 @@ public class Solution {
         return overlay;
     }
 }
+
+
+public String strStr(String haystack, String needle) {
+        int lenh=haystack.length();
+        int lenn=needle.length();
+        if(lenh<lenn)
+            return null;
+        if(0==lenn)
+            return haystack;
+        int[] overlay=getOverlay(needle);
+        int hindex=0,nindex=0;
+        while(hindex<lenh && nindex<lenn){
+            if(haystack.charAt(hindex)==needle.charAt(nindex)){
+                hindex++;
+                nindex++;
+            }
+            else if(0==nindex){
+                hindex++;
+            }
+            else{
+                nindex=overlay[nindex-1];
+            }
+        }
+        if(nindex==lenn)
+            return haystack.substring(hindex-nindex);
+        else
+            return null;
+    }
