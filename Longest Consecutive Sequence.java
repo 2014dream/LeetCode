@@ -6,7 +6,7 @@ The longest consecutive elements sequence is [1, 2, 3, 4]. Return its length: 4.
 
 Your algorithm should run in O(n) complexity.*/
 
-/* Use a hashset to store all the elements, traverse the array to find the left and right element.*／
+/* Use a hashset to store all the elements, traverse the array to find the left and right element.*/
 
 public class Solution {
     public int longestConsecutive(int[] num) {
