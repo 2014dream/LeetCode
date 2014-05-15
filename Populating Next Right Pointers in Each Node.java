@@ -81,4 +81,47 @@ Expect: 2,#,1,3,#,0,7,9,1,#,2,1,0,8,8,#,7,#
 Output:  2,#,1,3,#,0,7,9,1,#,2,1,0,#,7,#
 because the link 9->1 has not been connected.*/
 
-
+/**
+ * Definition for binary tree with next pointer.
+ * public class TreeLinkNode {
+ *     int val;
+ *     TreeLinkNode left, right, next;
+ *     TreeLinkNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public void connect(TreeLinkNode root) {
+        if(null==root)
+            return;
+        TreeLinkNode current=root;
+        TreeLinkNode nextHead=null,nextEnd=null;
+        while(null!=current){
+            if(null!=current.left){
+                if(null==nextHead){
+                    nextHead=current.left;
+                    nextEnd=nextHead;
+                }
+                else{
+                    nextEnd.next=current.left;
+                    nextEnd=nextEnd.next;
+                }
+            }
+            if(null!=current.right){
+                if(null==nextHead){
+                    nextHead=current.right;
+                    nextEnd=nextHead;
+                }
+                else{
+                    nextEnd.next=current.right;
+                    nextEnd=nextEnd.next;
+                }
+            }
+            current=current.next;
+            if(null==current){
+                current=nextHead;
+                nextHead=null;
+                nextEnd=null;
+            }
+        }
+    }
+}
