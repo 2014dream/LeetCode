@@ -38,5 +38,24 @@ For example, given k = 3,
 Return [1,3,3,1].
 
 Note:
-Could you optimize your algorithm to use only O(k) extra space?8?
+Could you optimize your algorithm to use only O(k) extra space?*/
+
+/* We could resolve the problem from right to left. */
+
+public class Solution {
+    public ArrayList<Integer> getRow(int rowIndex) {
+        ArrayList<Integer> result=new ArrayList<Integer>(rowIndex+1);
+        for(int i=0;i<=rowIndex;++i){
+            result.add(0);
+        }
+        result.set(0,1);
+        for(int i=1;i<=rowIndex;++i){
+            result.set(i,1);
+            for(int j=i-1;j>0;--j){
+                result.set(j,result.get(j)+result.get(j-1));
+            }
+        }
+        return result;
+    }
+}
 
