@@ -1,4 +1,5 @@
-/* Given two words (start and end), and a dictionary, find the length of shortest transformation sequence from start to end, such that:
+/* Given two words (start and end), and a dictionary, find the length of shortest transformation sequence from start to end, such
+that:
 
 Only one letter can be changed at a time
 Each intermediate word must exist in the dictionary
@@ -51,7 +52,8 @@ public class Solution {
     }
 }
 
-/* Follow up: Given two words (start and end), and a dictionary, find all shortest transformation sequence(s) from start to end, such that:
+/* Follow up: Given two words (start and end), and a dictionary, find all shortest transformation sequence(s) from start to end, 
+such that:
 
 Only one letter can be changed at a time
 Each intermediate word must exist in the dictionary
