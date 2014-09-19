@@ -37,34 +37,23 @@ The time complexity is O(n2), space is O(n).*/
 
 public class Solution {
     public String longestPalindrome(String s) {
-        if(s.length()<2)
-            return s;
+        if(null==s || 0==s.length())
+            return null;
         int len=s.length();
-        int start=0,end=0;
         boolean[][] dp=new boolean[len][len];
+        int start=0,maxLen=1;
         for(int i=0;i<len;++i){
             dp[i][i]=true;
-        }
-        for(int i=0;i<len-1;++i){
-            if(s.charAt(i)==s.charAt(i+1)){
-                dp[i][i+1]=true;
-                start=i;
-                end=i+2;
-            }
-        }
-        for(int size=3;size<=len;++size){
-            for(int i=0;i<len-size+1;++i){
-                int j=i+size-1;
-                if(s.charAt(i)==s.charAt(j) && dp[i+1][j-1]){
-                    dp[i][j]=true;
-                    start=i;
-                    end=j+1;
+            for(int j=0;j<i;++j){
+                dp[j][i]=(s.charAt(j)==s.charAt(i)) &&(i-j<2 || dp[j+1][i-1]);
+                if(dp[j][i] && maxLen<i-j+1){
+                    maxLen=i-j+1;
+                    start=j;
                 }
             }
         }
-        return s.substring(start,end);
+        return s.substring(start,start+maxLen);
     }
 }
-
 /* There is another solution with time complexity of O(n), refer below lind for details.*/
 http://leetcode.com/2011/11/longest-palindromic-substring-part-ii.html 
