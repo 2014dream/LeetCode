@@ -54,3 +54,35 @@ public class Solution {
         return result;
     }
 }
+
+
+/**
+ * Definition for binary tree
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        ArrayList<Integer> result=new ArrayList<Integer>();
+        TreeNode node=root;
+        if(null==root)
+            return result;
+        Stack<TreeNode> stack=new Stack<TreeNode>();
+        while(!stack.empty() || null!=node){
+            if(null!=node){
+                stack.push(node);
+                node=node.left;
+            }
+            else{
+                node=stack.pop();
+                result.add(node.val);
+                node=node.right;
+            }
+        }
+        return result;
+    }
+}
