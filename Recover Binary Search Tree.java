@@ -56,3 +56,7 @@ public class Solution {
         n1.val^=n2.val;
     }
 }
+
+
+constant space solution:
+http://www.cnblogs.com/TenosDoIt/p/3445682.html
