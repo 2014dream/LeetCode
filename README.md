@@ -1,3 +1,3 @@
 LeetCode
 ========
-Record Java solutions for the LeetCoce  questions.
+Record Java solutions for the LeetCode  questions.
