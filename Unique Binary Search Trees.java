@@ -26,3 +26,40 @@ public class Solution {
         return result[n];
     }
 }
+
+
+/* Follow up:
+Given n, generate all structurally unique BST's (binary search trees) that store values 1...n..*/
+
+/**
+ * Definition for binary tree
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; left = null; right = null; }
+ * }
+ */
+public class Solution {
+    public ArrayList<TreeNode> generateTrees(int n) {
+        return generateTrees(1,n);
+    }
+    public ArrayList<TreeNode> generateTrees(int start, int end){
+        ArrayList<TreeNode> result=new ArrayList<TreeNode>();
+        if(start>end){
+            result.add(null);
+            return result;
+        }
+        for(int i=start;i<=end;++i){
+            for(TreeNode left:generateTrees(start,i-1)){
+                for(TreeNode right:generateTrees(i+1,end)){
+                    TreeNode root=new TreeNode(i);
+                    root.left=left;
+                    root.right=right;
+                    result.add(root);
+                }
+            }
+        }
+        return result;
+    }
+}
