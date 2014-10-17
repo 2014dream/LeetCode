@@ -2,7 +2,21 @@
 Given an integer n, return all distinct solutions to the n-queens puzzle.
 
 Each solution contains a distinct board configuration of the n-queens' placement, where 'Q' and '.' both indicate a queen and an 
-empty space respectively.*/
+empty space respectively.
+
+我们把这一题分成几个小问题
+
+1. 传统的dfs递归
+
+2. 验证放置Queen的地方是否合法
+
+3. 输出Board结果
+
+这么做的好处就是，一开始，我们不用建立一个庞大的Board，我们选用一个数组对应Board里面的每一行，数组每一个值对应这一行放置Queen的
+列号
+
+比如： int[ ] {3,1,4,2} 代表放置的地点分别为[1,3], [2,1], [3,4], [2,4] 这么一来，我们用很简单的用数组表示了整个Board，而且在
+isValid函数里判断的时候会非常简洁，而且把输出Board单独隔离了出来*/
 
 public class Solution {
     public List<String[]> solveNQueens(int n) {
