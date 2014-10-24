@@ -39,7 +39,8 @@ Given two strings s1 and s2 of the same length, determine if s2 is a scrambled s
 with the length of k could be scrambled from s1 from index i.
 Here are the formular:
 1. init: dp[1][i][j]=(s1[i]==s2[j])?true:false
-2. dp[k][i][j] = ( dp[divlen][i][j] && dp[k-divlen][i+divlen][j+divlen] )  ||  ( dp[divlen][i][j+k-divlen] && dp[k-divlen][i+divlen][j] ) (divlen = 1,2,3...k-1) As long as one conticion is meet, it stops.*/
+2. dp[k][i][j] = ( dp[divlen][i][j] && dp[k-divlen][i+divlen][j+divlen] )  ||  ( dp[divlen][i][j+k-divlen] && dp[k-divlen]
+[i+divlen][j] ) (divlen = 1,2,3...k-1) As long as one conticion is meet, it stops.*/
 
 
 public class Solution {
@@ -73,7 +74,8 @@ public class Solution {
     }
 }
 
-/*The second solution use recursive method. In this solution, we need to add some condition check to reduce the complexity of recursion. */
+/*The second solution use recursive method. In this solution, we need to add some condition check to reduce the complexity of 
+recursion. */
 
 public class Solution {
     public boolean isScramble(String s1, String s2) {
