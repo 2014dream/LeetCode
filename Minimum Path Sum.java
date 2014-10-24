@@ -1,7 +1,7 @@
 /* Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the 
 sum of all numbers along its path.*/
 
-/* dp problem, running time O(n2), space O(n).*/
+/* dp problem, running time O(mn), space O(n).*/
 
 public class Solution {
     public int minPathSum(int[][] grid) {
