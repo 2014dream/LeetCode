@@ -38,7 +38,8 @@ public class Solution {
                 if(alreadyFind.get(S.charAt(i)) <= needFind.get(S.charAt(i)))
                     len++;
                 if(len==T.length()){
-                    while(!needFind.containsKey(S.charAt(start)) || alreadyFind.get(S.charAt(start)) > needFind.get(S.charAt(start)) ){
+                    while(!needFind.containsKey(S.charAt(start)) || alreadyFind.get(S.charAt(start)) > 
+                    needFind.get(S.charAt(start)) ){
                         if(needFind.containsKey(S.charAt(start)))
                             alreadyFind.put(S.charAt(start),alreadyFind.get(S.charAt(start))-1);
                         start++;
